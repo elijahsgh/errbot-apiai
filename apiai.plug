@@ -1,0 +1,4 @@
+[Core]
+Name = API.AI
+Module = apiai
+
