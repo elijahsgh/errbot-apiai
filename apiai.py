@@ -14,7 +14,6 @@ class ApiAiPlugin(BotPlugin):
     @cmdfilter
     def apiai_filter(self, msg, cmd, args, dry_run, emptycmd=False):
         if not emptycmd:
-            print("Got empty.")
             return msg, cmd, args
 
         matched_prefix = False
