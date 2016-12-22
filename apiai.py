@@ -7,11 +7,10 @@ from datetime import datetime as dt
 class ApiAiPlugin(BotPlugin):
     def __init__(self, *args, **kwargs):
         super(ApiAiPlugin, self).__init__(*args, **kwargs)
-        self.catch_unprocessed = True
         self.apikey = credentials.apikey
         self.apiai = apiai.ApiAI(self.apikey)
 
-    @cmdfilter
+    @cmdfilter(catch_unprocessed=True)
     def apiai_filter(self, msg, cmd, args, dry_run, emptycmd=False):
         if not emptycmd:
             return msg, cmd, args
